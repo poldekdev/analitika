@@ -1,7 +1,8 @@
 from src.analitika.config import config_parser
-from src.analitika.charts import bar, line
+from src.analitika.charts import bar, line, pie
 from src.analitika.config.LineConfig import LineConfig
 from src.analitika.config.BarConfig import BarConfig
+from src.analitika.config.PieConfig import PieConfig
 import argparse
 
 def generate_chart(config_path: str, output_path: str):
@@ -13,6 +14,8 @@ def generate_chart(config_path: str, output_path: str):
     if isinstance(config, BarConfig):
         fig, ax = bar.generate_chart(config.categories, config.values, config.title)
         fig.savefig(output_path)
+    if isinstance(config, PieConfig):
+        fig, ax = pie.generate_chart(config.categories, config.values, config.colors, config.title, config.value_label)
 parser = argparse.ArgumentParser(
     prog = "analitika",
     description = "Chart generator with JSON configuration"
