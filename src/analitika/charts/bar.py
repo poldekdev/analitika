@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def generate_chart(categories: list[str], values: list[float], title: str):
