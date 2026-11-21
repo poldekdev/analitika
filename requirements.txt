@@ -1,0 +1,17 @@
+-e file:///home/poldek/analitika
+annotated-types==0.8.0
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.68.0
+kiwisolver==1.5.1
+matplotlib==3.11.2
+numpy==2.5.5
+packaging==26.3
+pillow==13.0.0
+pydantic==2.14.4
+pydantic-core==2.50.5
+pyparsing==3.3.3
+python-dateutil==4.0.0
+typing-extensions==4.16.0
+typing-inspection==0.4.5
+tzdata==2026.6
