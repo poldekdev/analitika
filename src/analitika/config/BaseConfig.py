@@ -1,8 +1,8 @@
 from pydantic import BaseModel
 
-from src.analitika.config import BarConfig
-from src.analitika.config.LineConfig import LineConfig
-from src.analitika.config.PieConfig import PieConfig
+from analitika.config import BarConfig
+from analitika.config.LineConfig import LineConfig
+from analitika.config.PieConfig import PieConfig
 
 
 class BaseConfig(BaseModel):

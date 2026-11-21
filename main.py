@@ -1,21 +1,21 @@
 import argparse
 
-from src.analitika.charts import bar, line, pie
-from src.analitika.config import config_parser
-from src.analitika.config.BarConfig import BarConfig
-from src.analitika.config.LineConfig import LineConfig
-from src.analitika.config.PieConfig import PieConfig
+from matplotlib import pyplot as plt
+
+from analitika.charts import bar, line, pie
+from analitika.config import config_parser
+from analitika.config.BarConfig import BarConfig
+from analitika.config.LineConfig import LineConfig
+from analitika.config.PieConfig import PieConfig
 
 
-def generate_chart(config_path: str, output_path: str):
+def generate_chart(config_path: str, output_path: str | None):
     with open(config_path, "r") as f:
         config = config_parser.parse_config(f.read())
     if isinstance(config, LineConfig):
         fig, _ax = line.generate_chart(config.x, config.y, config.title, config.marker)
-        fig.savefig(output_path)
     if isinstance(config, BarConfig):
         fig, _ax = bar.generate_chart(config.categories, config.values, config.title)
-        fig.savefig(output_path)
     if isinstance(config, PieConfig):
         fig, _ax = pie.generate_chart(
             config.categories,
@@ -24,6 +24,10 @@ def generate_chart(config_path: str, output_path: str):
             config.title,
             config.value_label,
         )
+    if output_path != None:
+        fig.savefig(output_path)
+    else:
+        plt.show()
 
 
 parser = argparse.ArgumentParser(
@@ -33,7 +37,7 @@ parser.add_argument("config")
 parser.add_argument(
     "-o",
     "--output",
-    default="chart.png",
+    default=None,
     help="Path to output file (i.e path to where chart should be saved to)",
 )
 
