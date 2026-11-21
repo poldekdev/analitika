@@ -5,4 +5,4 @@ class LineConfig(BaseModel):
     x: list[float]
     y: list[float]
     title: str
-    marker: str | None = "o"
+    marker: str = "o"

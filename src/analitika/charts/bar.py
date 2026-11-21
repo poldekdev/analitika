@@ -1,9 +1,10 @@
+from analitika.config.BarConfig import BarConfig
 import matplotlib.pyplot as plt
 
 
-def generate_chart(categories: list[str], values: list[float], title: str):
+def generate_chart(config: BarConfig):
     fig, ax = plt.subplots()
-    ax.bar(categories, values)
-    ax.set_title(title)
+    ax.bar(config.categories, config.values)
+    ax.set_title(config.title)
 
     return fig, ax

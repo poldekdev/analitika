@@ -1,15 +1,10 @@
+from analitika.config.PieConfig import PieConfig
 import matplotlib.pyplot as plt
 
 
-def generate_chart(
-    categories: list[str],
-    values: list[float],
-    colors: list[str] | None,
-    title: str | None,
-    value_label: str | None,
-):
+def generate_chart(config: PieConfig):
     fig, ax = plt.subplots()
-    ax.pie(values, labels=categories, colors=colors, autopct=value_label)
-    if title != None:
-        ax.set_title(title)
+    ax.pie(config.values, labels=config.categories, colors=config.colors, autopct=config.value_label)
+    if config.title != None:
+        ax.set_title(config.title)
     return fig, ax

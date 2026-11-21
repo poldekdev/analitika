@@ -13,17 +13,11 @@ def generate_chart(config_path: str, output_path: str | None):
     with open(config_path, "r") as f:
         config = config_parser.parse_config(f.read())
     if isinstance(config, LineConfig):
-        fig, _ax = line.generate_chart(config.x, config.y, config.title, config.marker)
+        fig, _ax = line.generate_chart(config)
     if isinstance(config, BarConfig):
-        fig, _ax = bar.generate_chart(config.categories, config.values, config.title)
+        fig, _ax = bar.generate_chart(config)
     if isinstance(config, PieConfig):
-        fig, _ax = pie.generate_chart(
-            config.categories,
-            config.values,
-            config.colors,
-            config.title,
-            config.value_label,
-        )
+        fig, _ax = pie.generate_chart(config)
     if output_path != None:
         fig.savefig(output_path)
     else:
