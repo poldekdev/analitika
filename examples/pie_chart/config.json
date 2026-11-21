@@ -1,0 +1,22 @@
+{
+  "type": "pie",
+  "module_config": {
+    "categories": [
+      "Cats",
+      "Dogs",
+      "Other"
+    ],
+    "values": [
+      35.0,
+      47.0,
+      18.0
+    ],
+    "title": "Which pet is more common in Poland? (based on Otodom statistics)",
+    "value_label": "%1.1f%%",
+    "colors": [
+      "LightSalmon",
+      "LightSkyBlue",
+      "Lime"
+    ]
+  }
+}

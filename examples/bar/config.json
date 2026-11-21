@@ -1,0 +1,16 @@
+{
+  "type": "bar",
+  "module_config": {
+    "categories": [
+      "Cats",
+      "Dogs",
+      "Other"
+    ],
+    "values": [
+      35.0,
+      47.0,
+      18.0
+    ],
+    "title": "Which pet is more common in Poland? (based on Otodom statistics)"
+  }
+}
